@@ -1,5 +1,27 @@
 ### Feast It - Technical Challenge
 
+### Example queries:
+
+- App is deployed at: https://feast-it-test.herokuapp.com
+- API can be accessed at: https://feast-it-test.herokuapp.com/api/v1/suggestions
+
+
+Some examples of queries are:
+
+- Returns all restaurants with halal, sorted by distance
+
+```
+https://feast-it-test.herokuapp.com/api/v1/suggestions?q=halal&longitude=122.409668813219&latitude=37.7806943774082
+```
+
+- Returns all restaurants with halal, without distance
+
+```
+https://feast-it-test.herokuapp.com/api/v1/suggestions?q=halal
+```
+
+
+
 ### Process
 
 - Created POSTGRES DB on AWS
