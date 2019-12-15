@@ -9,10 +9,14 @@ module.exports = {
     getSuggestions
 }
 
+/**
+ * Handles request, and calls appropriate function depending 
+ * on if long & lat are provided or not.
+ */
 async function getSuggestions({ q, longitude, latitude }) {
 
     if (longitude && latitude) {
-        const result  = await getSuggestionsWithDistance(q, longitude, latitude);
+        const result = await getSuggestionsWithDistance(q, longitude, latitude);
         return result[0];
     }
     else
@@ -20,8 +24,11 @@ async function getSuggestions({ q, longitude, latitude }) {
 
 }
 
-
-async function getSuggestionsWithoutDistance(q, longitude, latitude) {
+/**
+ * Method to query DB, when only search param is provided
+ * @param {*} q 
+ */
+async function getSuggestionsWithoutDistance(q) {
 
     return await Restaurant.findAll(
         {
@@ -41,7 +48,14 @@ async function getSuggestionsWithoutDistance(q, longitude, latitude) {
 
 }
 
-
+/**
+ * Method to query DB when longitude and latitude are provided,
+ * returns results sorted in ascending order by distance
+ * 
+ * @param {search parameter} q 
+ * @param {customer longitude} longitude 
+ * @param {customer latitude} latitude 
+ */
 async function getSuggestionsWithDistance(q, longitude, latitude) {
 
     const query = `

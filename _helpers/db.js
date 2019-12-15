@@ -1,6 +1,8 @@
 const Sequelize = require('sequelize');
 
-const sequelize = new Sequelize('postgres://feastIt:feastit1994!@feastit.cpxwcp2hzt3j.us-east-1.rds.amazonaws.com:5432/postgres',
+const POSTGRES_URL = `postgres://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@feastit.cpxwcp2hzt3j.us-east-1.rds.amazonaws.com:5432/postgres`
+
+const sequelize = new Sequelize(POSTGRES_URL,
                                 {
                                     define: {
                                         timestamps: false
