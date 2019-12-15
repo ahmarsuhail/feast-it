@@ -20,7 +20,14 @@ https://feast-it-test.herokuapp.com/api/v1/suggestions?q=halal&longitude=122.409
 https://feast-it-test.herokuapp.com/api/v1/suggestions?q=halal
 ```
 
+- Currently, the api only searches the fields:
+- Applicant,
+- FacilityType
+- LocationDescription
+- Address
+- Food Items
 
+For a paritcular search term as these seemed the most relevant for a query.
 
 ### Process
 
