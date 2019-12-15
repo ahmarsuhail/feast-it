@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 
-const sequelize = new Sequelize('',
+const sequelize = new Sequelize('postgres://feastIt:feastit1994!@feastit.cpxwcp2hzt3j.us-east-1.rds.amazonaws.com:5432/postgres',
                                 {
                                     define: {
                                         timestamps: false
